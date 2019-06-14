@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "jquery": "^3.4.1"
   }
 }
