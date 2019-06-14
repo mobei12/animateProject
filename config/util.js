@@ -18,7 +18,7 @@ const getHtml = function(globPath) {
     let pathname = entry .split("/") .splice(-2) .join("/") .split(".")[0];
     let conf = {
       filename: pathname + ".html",
-      template: "src/pages/" + pathname + ".html",
+      template: "src/" + pathname + ".html",
       chunks:[pathname]//只加载当前文件
     };
     htmls.push(new HtmlWebpackPlugin(conf));

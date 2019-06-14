@@ -6,7 +6,7 @@ const config = {
   /*  entry: {
     about: path.resolve(__dirname, "../src/pages/index/index.js")
   }, */
-  entry: util.getEntry("src/pages/*/*.js"), //js的入口文件，支持多入口
+  entry: util.getEntry("src/*/*.js"), //js的入口文件，支持多入口
   output: {
     //js打包压缩后的出口文件，多入口时对应的配置应做相对变化 注释②
     path: path.resolve(__dirname, "../dist"),
@@ -36,21 +36,25 @@ const config = {
     ]
   },
   plugins: Object.assign(
-    [new webpack.HotModuleReplacementPlugin()],
-    util.getHtml("src/pages/*/*.js")
+    [
+      new webpack.HotModuleReplacementPlugin()
+    ],
+    util.getHtml("src/*/*.js")
   ),
   devServer: {
     //webpack-dev-server配置（仅开发环境需要）
 
     contentBase: path.join(__dirname, "./dist"), //编译打包文件的位置
     //publicPath: "/",
-    port: 8080, //服务器端口号
-    host: "0.0.0.0",
-    openPage: "src/pages/index", //打开的目录
+    port: 8088, //服务器端口号
+    openPage: "index", //打开的目录
     proxy: {}, //代理列表
     hot: true, //热更新
     compress: true,
-    historyApiFallback: true //开启服务器history重定向模式
+    historyApiFallback: true, //开启服务器history重定向模式
+    watchOptions: {
+      poll: false
+    }
   }
 };
 module.exports = config;
