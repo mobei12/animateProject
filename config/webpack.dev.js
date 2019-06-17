@@ -47,7 +47,7 @@ const config = {
     contentBase: path.join(__dirname, "./dist"), //编译打包文件的位置
     //publicPath: "/",
     port: 8088, //服务器端口号
-    openPage: "src/index", //打开的目录
+    openPage: "index", //打开的目录
     proxy: {}, //代理列表
     hot: true, //热更新
     compress: true,
