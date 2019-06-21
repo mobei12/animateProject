@@ -1,4 +1,5 @@
 import lottie from "../../static/js/lottie"
+import $ from "jquery";
 const animationData = require('../../static/lotties/data.json');
 
 lottie.loadAnimation({
@@ -9,3 +10,6 @@ lottie.loadAnimation({
   //path: 'https://assets2.lottiefiles.com/packages/lf20_FyqMgR.json' // the path to the animation json
   animationData:animationData //文件数据
 });
+$('#main').on('click',function(){
+  lottie.pause()
+})
