@@ -10,4 +10,5 @@ particleBac(".main",{
     line:false,
     color:"rgba(0,0,0,1)",
     count:100,
+    "z-index":-1
 })
