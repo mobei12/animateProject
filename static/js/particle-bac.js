@@ -21,8 +21,8 @@
  */
 
 function scale(canvasList, opt) {
-    var ratio = window.devicePixelRatio || 1,
-        ctx = null;
+    const ratio = window.devicePixelRatio || 1;
+    let ctx = null;
 
     canvasList.forEach(function (canvas) {
         ctx = canvas.getContext('2d');
@@ -37,8 +37,8 @@ function scale(canvasList, opt) {
     return canvasList;
 }
 
-var Particle = function Particle(element, config) {
-    var this$1 = this;
+let Particle = function Particle(element, config) {
+    let this$1 = this;
     if (config === void 0) config = {};
 
     this.element = document.querySelector(element);
@@ -54,7 +54,7 @@ var Particle = function Particle(element, config) {
     this.resize = typeof config.resize === 'boolean' ? config.resize : true;
     this.line = typeof config.line === 'boolean' ? config.line : true;
     this.appendCanvas();
-    for (var i = 0; i < this.count; i++) {
+    for (let i = 0; i < this.count; i++) {
         this$1.points.push(this$1.getPoint());
     }
 
@@ -75,7 +75,7 @@ var Particle = function Particle(element, config) {
 };
 
 Particle.prototype.getPoint = function getPoint() {
-    var x = Math.ceil(Math.random() * this.width),
+    const x = Math.ceil(Math.random() * this.width),
         y = Math.ceil(Math.random() * this.height),
         r = +(Math.random() * this.radius).toFixed(4),
         rateX = +(Math.random() * 2 - 1).toFixed(4),
@@ -113,7 +113,7 @@ Particle.prototype.draw = function draw() {
 };
 
 Particle.prototype.drawPoints = function drawPoints() {
-    var this$1 = this;
+    let this$1 = this;
 
     this.points.forEach(function (item, i) {
         item.opacity = item.opacity || Math.random();
@@ -129,7 +129,7 @@ Particle.prototype.drawPoints = function drawPoints() {
         }
         this$1.ctx.beginPath();
         this$1.ctx.arc(item.x, item.y, item.r, 0, Math.PI * 2, false);
-        this$1.ctx.fillStyle = this$1.color.replace('1',item.opacity)
+        this$1.ctx.fillStyle = this$1.color.replace('1', item.opacity)
         this$1.ctx.fill();
         if (item.x > 0 && item.x < this$1.width && item.y > 0 && item.y < this$1.height) {
             item.x += item.rateX * this$1.rate;
@@ -142,19 +142,19 @@ Particle.prototype.drawPoints = function drawPoints() {
 };
 
 Particle.prototype.dis = function dis(x1, y1, x2, y2) {
-    var disX = Math.abs(x1 - x2),
+    const disX = Math.abs(x1 - x2),
         disY = Math.abs(y1 - y2);
 
     return Math.sqrt(disX * disX + disY * disY);
 };
 
 Particle.prototype.drawLines = function drawLines() {
-    var this$1 = this;
-    var len = this.points.length;
+    let this$1 = this;
+    let len = this.points.length;
     /* 对圆心坐标进行两两判断 */
-    for (var i = 0; i < len; i++) {
-        for (var j = len - 1; j >= 0; j--) {
-            var x1 = this$1.points[i].x,
+    for (let i = 0; i < len; i++) {
+        for (let j = len - 1; j >= 0; j--) {
+            let x1 = this$1.points[i].x,
                 y1 = this$1.points[i].y,
                 x2 = this$1.points[j].x,
                 y2 = this$1.points[j].y,
@@ -176,4 +176,5 @@ Particle.prototype.drawLines = function drawLines() {
 function particleBac(element, config) {
     new Particle(element, config).draw();
 }
+
 export default particleBac

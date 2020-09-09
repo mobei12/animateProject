@@ -8,7 +8,7 @@ $(".animateList .animateItem").on("click",function(){
 })
 particleBac(".main",{
     line:false,
-    color:"rgba(0,0,0,1)",
-    count:100,
+    color:"rgba(255,255,255,1)",
+    count:500,
     "z-index":-1
 })
