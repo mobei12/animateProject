@@ -44,6 +44,10 @@
             flex: 1;
             cursor: pointer;
         }
+        .animateList > .animateItem.active {
+            background: #27A5F9;
+            color: #fff;
+        }
 
         .content {
             width: 80%;
@@ -69,14 +73,15 @@
 <div class="main">
     <h3 class="title">动画列表</h3>
     <ul class="animateList">
-        <li class="animateItem" data-pageName="lottieDemo" title="lottie动画">lottie</li>
+        <li class="animateItem active" data-pageName="lottieDemo" title="lottie动画">lottie</li>
         <li class="animateItem" data-pageName="pointLoader" title="圆圈动画">circleLoader</li>
         <li class="animateItem" data-pageName="circleLoader" title="点动画">pointLoader</li>
         <li class="animateItem" data-pageName="svgDemo" title="SVG图标切换">SVGAnimate</li>
-        <li class="animateItem" data-pageName="threejs" title="threeJs">threeJs</li>
+        <!--<li class="animateItem" data-pageName="threejs" title="threeJs">threeJs</li>-->
+        <li class="animateItem" data-pageName="oasisEngine" title="oasisEngine">oasisEngine</li>
     </ul>
     <div class="content">
-        <iframe src="../canvas"  frameborder="0"></iframe>
+        <iframe src="../lottieDemo"  frameborder="0"></iframe>
     </div>
 </div>
 </body>

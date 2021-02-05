@@ -2,6 +2,7 @@ import $ from "jquery";
 import particleBac from "../../static/js/particle-bac"
 $(".animateList .animateItem").on("click",function(){
     const pageName = $(this).attr("data-pageName");
+    $(this).addClass("active").siblings().removeClass("active")
     if(pageName){
         $(".content>iframe").attr("src","../"+pageName)
     }
