@@ -9,8 +9,10 @@ $(".animateList .animateItem").on("click",function(){
 })
 particleBac(".main",{
     line:false,
-    color:"rgba(255,255,255,1)",
-    count:300,
-    radius:14,
+    color:"rgba(65 ,160, 255 , 1)",
+    count:50,
+    rate:0.5,
+    radius:5,
+    bounce:true,
     "z-index":-1
 })
