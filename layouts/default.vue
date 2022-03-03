@@ -63,6 +63,7 @@
 </template>
 
 <script>
+import particleBac from '@/static/js/particle-bac'
 export default {
   name: 'DefaultLayout',
   data() {
@@ -81,12 +82,54 @@ export default {
           title: 'Inspire',
           to: '/inspire',
         },
+        {
+          icon: 'mdi-dog',
+          title: 'Lottie',
+          to: '/lottie',
+        },
+        {
+          icon: 'mdi-cat',
+          title: 'PointLoader',
+          to: '/pointLoader',
+        },
+        {
+          icon: 'mdi-fish',
+          title: 'CircleLoader',
+          to: '/circleLoader',
+        },
+        {
+          icon: 'mdi-music',
+          title: 'SvgDemo',
+          to: '/svgDemo',
+        },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js',
+      title: 'use nuxt+Vuetify',
     }
+  },
+  mounted() {
+    this.initParticle()
+  },
+  methods: {
+    initParticle() {
+      particleBac('.container', {
+        line: false,
+        color: 'rgba(65 ,160, 255 , 1)',
+        count: 50,
+        rate: 0.5,
+        radius: 5,
+        bounce: true,
+        'z-index': -1,
+      })
+    },
   },
 }
 </script>
+<style lang="scss" scoped>
+.container {
+  position: relative;
+  height: 100%;
+}
+</style>
