@@ -16,7 +16,7 @@ $ npm run dev
 # build for production and launch server
 $ npm run build
 $ npm run start
--- 服务器通过pm2 启动 `pm2 start ./node_modules/nuxt/bin/nuxt -- start`
+-- 服务器通过pm2 启动 `pm2 start ./node_modules/nuxt/bin/nuxt.js -- start`
 # 生成静态目录
 $ npm run generate
 ```
